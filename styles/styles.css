@@ -1,0 +1,473 @@
+body {
+  color: #768390;
+  background: #FFF;
+  font-family: "Effra", Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #7cb9ae;
+  margin-top: 0;
+}
+
+nav {
+  height: 80px;
+  width: 100%;
+  background: #7cb9ae;
+}
+
+nav ul {
+  float: right;
+  margin: auto;
+  margin-right: 40px;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 5px;
+  line-height: 80px;
+}
+
+nav li a {
+  color: #FFF;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 0;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+nav li a.active, nav li a:hover {
+  border-bottom: 5px solid #FFF;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+label.logo {
+  color: #FFF;
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px;
+  padding-left: 5%;
+  line-height: 80px;
+}
+
+hr {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border: 1px solid #7cb9ae;
+  height: 0;
+}
+
+section.page {
+  min-height: 100vh;
+}
+
+.about-me h1 {
+  font-size: 50px;
+  text-align: left;
+  padding-top: 35vh;
+  width: 60%;
+  margin: auto;
+}
+
+.about-me p {
+  font-size: 15px;
+  font-family: "Georgia";
+  text-align: left;
+  margin: auto;
+  padding-top: 10%;
+  padding-bottom: 10vh;
+  width: 60%;
+}
+
+.page-title h1 {
+  width: 80%;
+  padding: 10px;
+  font-size: 50px;
+  text-align: right;
+  margin-bottom: 1.5rem;
+  margin: auto;
+}
+
+.page-title p {
+  width: 80%;
+  font-size: 15px;
+  font-family: "Georgia";
+  text-align: right;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+/*==================================
+    TIMELINE
+==================================*/
+/*-- GENERAL STYLES
+    ------------------------------*/
+p.timeline-text {
+  max-width: 550px;
+}
+
+.timeline {
+  line-height: 1.4em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {
+  line-height: inherit;
+}
+
+/*----- TIMELINE ITEM -----*/
+.timeline-item {
+  padding-left: 40px;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/*----- TIMELINE INFO -----*/
+.timeline-info {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin: 0 0 .5em 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/*----- TIMELINE MARKER -----*/
+.timeline-marker {
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  width: 9px;
+}
+
+.timeline-marker:before {
+  background: #7cb9ae;
+  border: 3px solid transparent;
+  border-radius: 100%;
+  content: "";
+  display: block;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  -webkit-transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+  z-index: +1;
+}
+
+.timeline-marker:after {
+  content: "";
+  width: 3px;
+  background: #CCD5DB;
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 9px;
+}
+
+.timeline-item:last-child .timeline-marker:after {
+  content: none;
+}
+
+.timeline-item:not(.period):hover .timeline-marker:before {
+  background: #FFF;
+  border: 3px solid #7cb9ae;
+}
+
+/*----- TIMELINE CONTENT -----*/
+.timeline-content {
+  padding-bottom: 40px;
+}
+
+.timeline-content p:last-child {
+  margin-bottom: 0;
+}
+
+/*----- TIMELINE PERIOD -----*/
+.period {
+  padding: 0;
+}
+
+.period .timeline-info {
+  display: none;
+}
+
+.period .timeline-marker:before {
+  background: transparent;
+  content: "";
+  width: 20px;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  top: 0;
+  bottom: 30px;
+  position: absolute;
+  border-top: 3px solid #CCD5DB;
+  border-bottom: 3px solid #CCD5DB;
+}
+
+.period .timeline-marker:after {
+  content: "";
+  height: 32px;
+  top: auto;
+}
+
+.period .timeline-content {
+  padding: 40px 0 70px;
+}
+
+.period .timeline-title {
+  margin: 0;
+}
+
+.period.first .timeline-marker:before {
+  border-top: none;
+}
+
+.period.last .timeline-marker:before {
+  border-bottom: none;
+}
+
+/*----------------------------------------------
+        MOD: TIMELINE SPLIT
+    ----------------------------------------------*/
+@media (min-width: 768px) {
+  .timeline-split .timeline, .timeline-centered .timeline {
+    display: table;
+  }
+  .timeline-split .timeline-item, .timeline-centered .timeline-item {
+    display: table-row;
+    padding: 0;
+  }
+  .timeline-split .timeline-info, .timeline-centered .timeline-info,
+  .timeline-split .timeline-marker,
+  .timeline-centered .timeline-marker,
+  .timeline-split .timeline-content,
+  .timeline-centered .timeline-content,
+  .timeline-split .period .timeline-info,
+  .timeline-centered .period .timeline-info {
+    display: table-cell;
+    vertical-align: top;
+  }
+  
+  .timeline-split .timeline-marker,
+  .timeline-centered .timeline-marker {
+    position: relative;
+  }
+  
+  .timeline-split .timeline-content,
+  .timeline-centered .timeline-content {
+    padding-left: 30px;
+  }
+  .timeline-split .timeline-info, .timeline-centered .timeline-info {
+    padding-right: 30px;
+  }
+  .timeline-split .period .timeline-title, .timeline-centered .period .timeline-title {
+    position: relative;
+    left: -45px;
+  }
+}
+
+/*----------------------------------------------
+        MOD: TIMELINE CENTERED
+    ----------------------------------------------*/
+@media (min-width: 992px) {
+  .timeline-centered,
+  .timeline-centered .timeline-item,
+  .timeline-centered .timeline-info,
+  .timeline-centered .timeline-marker,
+  .timeline-centered .timeline-content {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .timeline-centered .timeline-item {
+    padding-bottom: 40px;
+    overflow: hidden;
+  }
+  .timeline-centered .timeline-marker {
+    position: absolute;
+    left: 50%;
+    margin-left: -7.5px;
+  }
+  .timeline-centered .timeline-info,
+  .timeline-centered .timeline-content {
+    width: 48%;
+  }
+  .timeline-centered > .timeline-item:nth-child(odd) .timeline-info {
+    float: left;
+    text-align: right;
+    padding-right: 30px;
+  }
+  .timeline-centered > .timeline-item:nth-child(odd) .timeline-content {
+    float: right;
+    text-align: left;
+    padding-left: 30px;
+  }
+  .timeline-centered .timeline-item:nth-child(odd) p.timeline-text {
+    float: right;
+    text-align: left;
+  }
+  .timeline-centered > .timeline-item:nth-child(even) .timeline-info {
+    float: right;
+    text-align: left;
+    padding-left: 30px;
+  }
+  .timeline-centered > .timeline-item:nth-child(even) .timeline-content {
+    float: left;
+    text-align: right;
+    padding-right: 30px;
+  }
+  .timeline-centered > .timeline-item.period .timeline-content {
+    float: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .timeline-centered .timeline-item.period {
+    padding: 50px 0 90px;
+  }
+  .timeline-centered .period .timeline-marker:after {
+    height: 30px;
+    bottom: 0;
+    top: auto;
+  }
+  .timeline-centered .period .timeline-title {
+    left: auto;
+  }
+}
+
+/*----------------------------------------------
+        MOD: MARKER OUTLINE
+    ----------------------------------------------*/
+.marker-outline .timeline-marker:before {
+  background: transparent;
+  border-color: #7cb9ae;
+}
+
+.marker-outline .timeline-item:hover .timeline-marker:before {
+  background: #7cb9ae;
+}
+
+h1.achivements {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+p.achivements {
+  text-align: center;
+  margin: auto;
+  width: 60%;
+}
+
+section .card-list {
+  width: calc(100% - 2em);
+  margin-left: 1em;
+  margin-right: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-list {
+  margin-top: 5vh;
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card-list .card {
+  position: relative;
+  width: 20em;
+  height: 210px;
+  margin: 115px 10px;
+  padding: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 0.5px 202px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0.5px 202px rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  background: #7cb9ae;
+}
+
+.card-list :hover.card {
+  height: 420px;
+  margin: 10px 10px;
+}
+
+.card-list .card .imgBx {
+  position: relative;
+  max-width: 260px;
+  max-height: 260px;
+  top: -40px;
+  left: 20px;
+}
+
+.card-list .card .imgBx img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.card-list .card .content {
+  position: relative;
+  margin-top: -70px;
+  padding: 10px 15px;
+  text-align: center;
+  color: #ffffff;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.card-list .card:hover .content {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.card-list h2 {
+  color: #FFF;
+}
+/*# sourceMappingURL=styles.css.map */
