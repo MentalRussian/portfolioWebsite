@@ -3,40 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>YJ Portfolio</title>
+    <script src=""></script>
     <link rel="stylesheet" href="./styles/styles.css">
-    <script src="https://use.typekit.net/bkt6ydm.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 </head>
 <body>
     <header class="nav-bar">
         <nav>
             <!--img class="logo" src="" alt=""-->
             <label class="logo">Yury Johnson</label>
-            <ul>
-                <li><a class="active" href="index.html">Home</a></li>               
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+            <ul class="nav-links">
+                <!-- warning dodgey code!!! id in ancor lower case as this allows the javascript to use id from pages
+                     to toggle active status for links in nav bar-->
+                <li><a id="about" href="./index.html#About">About</a></li>               
+                <li><a id="experience" href="./index.html#Experience">Experience</a></li>
+                <li><a id="achivements" href="./index.html#Achivements">Achivements</a></li>
+                <li><a id="interests" href="./index.html#Interests">Interests</a></li>
+                <li><a id="contact" href="./index.html#Contact">Contact</a></li>
             </ul>
         </nav>  
     </header>
 
-    <!--<hr style="transform: rotate(15deg) translate(0px,135px); margin-top:1rem;">-->
-    <section class="page about-me">
-        <h1>About Me</h1>
-        <p> 
-            I am an enthusiastic and determined junior electronics engineer.               
-            I love to understand all areas within product development and have a desire to create and work with new and innovative technology. 
-            I am looking for a role that allows me to collaborate as part of a multi-disciplinary team to involved with a wide range of projects.
-        </p>
+    <section class="page" id="About">
+        <div class="about-me">
+            <img src="img/photo_me.jpg" />
+            <div>
+                <h1>About Me</h1>
+                <p> 
+                    I am an enthusiastic and determined junior electronics engineer.               
+                    I love to understand all areas within product development and have a desire to create and work with new and innovative technology. 
+                    I am looking for a role that allows me to collaborate as part of a multi-disciplinary team to involved with a wide range of projects.
+                </p>
+            </div>  
+        </div>
     </section>
-    
-    <hr style="transform: rotate(-15deg) translate(0px,-130px);">
 
-    <section class="page timeline">
+    <section class="page" id="Experience">
         <div class="page-title">
             <h1>What I've been up doing</h1>
             <p >Basic outline of what i've been doing over the years</p>
         </div>
+        
         <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
             <ul class="timeline timeline-centered">
                 
@@ -121,17 +128,16 @@
             </ul>
         </div>
 
-        </section>
-        
     </section>
-    
-    <hr style="margin-top:15vh; margin-bottom:15vh;">
 
-    <section class="page achivements">
-        <H1 class="achivements">Achivements</H1>
-        <p class="achivements">
-            This section currently has cards however needs to be changed
-        </p>
+    <section class="page" id="Achivements">
+        
+        <div class="page-title">
+            <h1>Achivements</h1>
+            <p>
+                This section currently has cards however needs to be changed
+            </p>
+        </div>
 
         <section class="card-list">   
             <article class="card">
@@ -156,10 +162,46 @@
                         <p>As part of the scholarship, we aided in promoting paxton throughout the open days</p>
                     </div>
             </article>
+        
+        </section>
+    </section>
+
+    <section class="page" id="Interests">
+        
+        <div class="page-title">
+            <h1>Interests</h1>
+            <p>
+                This section will show what gets me out of bed every morning
+            </p>
+        </div>
+
+        <section class="card-list">   
+            <article class="card">
+                    <div class="imgBx">
+                        <img src="img\Interests\IMG_20190629_210125.jpg" />
+                    </div>
+                    <div class="content">
+                        <p class="card-date"> July 2018</p>
+                        <h2 class="card-header">Paxton Scholarship</h2>
+                        <p class="card-description">I am very proud of achiving the paxton Scholarship! 
+                                                    This was my first step into moving towards an engineering job!</p>
+                    </div>
+            </article>
+
+            <article class="card">
+                    <div class="imgBx">
+                        <img src="img\Interests\IMG_20200331_202419.jpg" />
+                    </div>
+                    <div class="content">
+                        <p> July 2019</p>
+                        <h2>Paxton Promotion</h2>
+                        <p>As part of the scholarship, we aided in promoting paxton throughout the open days</p>
+                    </div>
+            </article>
 
             <article class="card">
                 <div class="imgBx">
-                    <img src="" />
+                    <img src="img\Interests\IMG_20200508_155631.jpg" />
                 </div>
                 <div class="content">
                     <p> July 2019</p>
@@ -170,19 +212,7 @@
 
             <article class="card">
                 <div class="imgBx">
-                    <img src="" />
-                </div>
-                <div class="content">
-                    <p> July 2019</p>
-                    <h2>Paxton Promotion</h2>
-                    <p>As part of the scholarship, we aided in promoting paxton throughout the open days</p>
-                </div>
-            </article>
-            
-
-            <article class="card">
-                <div class="imgBx">
-                    <img src="" />
+                    <img src="img\Interests\IMG_20200531_125629.jpg" />
                 </div>
                 <div class="content">
                     <p> July 2019</p>
@@ -193,8 +223,59 @@
         
         </section>
     </section>
-    </div>
 
-    <hr>
+    <section class="page" id="Contact">
+        <div class="page-title">
+            <h1>Contact Me</h1>
+            <p> 
+                If you want to find out more about me or any of my projects feel free to contact me here!
+            </p>
+            <p>
+                <b> I look forward to working with you!</b>
+            </p>
+        </div>
+        <div class="contact-form">
+            <div class="inputBox">
+                <input type="text" name='' required="required">
+                <span class="text">First Name</span>
+                <span class="line"></span>
+            </div>
+            <div class="inputBox">
+                <input type="text" name='' required="required">
+                <span class="text">Last Name</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" name='' required="required">
+                <span class="text">Email</span>
+                <span class="line"></span>
+            </div>
+            <div class="inputBox">
+                <input type="text" name='' required="required">
+                <span class="text">Mobile</span>
+                <span class="line"></span>
+            </div>
+            <div class="inputBox">
+                <input type="text" name='' required="required">
+                <span class="text">Message</span>
+                <span class="line"></span>
+            </div>
+        </div>
+
+        <div class="social-media">
+            <h2>Or Alternativly contact me through social media!</h2>
+
+        </div>
+    </section>
+
+    <footer>
+        <h1>footer</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut iusto ab ratione recusandae 
+            tempore excepturi ipsam consequuntur voluptate. Veritatis ducimus odit repudiandae reiciendis 
+            quia quisquam laborum maiores eos debitis! Minus?</p>
+    </footer>
+<script src="./scripts/script.js"></script>
 </body>
+
 </html>

@@ -7,44 +7,19 @@ body {
   text-decoration: none;
   list-style: none;
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  height: 100%;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-padding-top: 150px;
+  display: block;
 }
 
-h1, h2, h3, h4, h5, h6 {
+body h1, body h2, body h3, body h4, body h5, body h6 {
   color: #7cb9ae;
   margin-top: 0;
-}
-
-nav {
-  height: 80px;
-  width: 100%;
-  background: #7cb9ae;
-}
-
-nav ul {
-  float: right;
-  margin: auto;
-  margin-right: 40px;
-}
-
-nav li {
-  display: inline-block;
-  margin: 0 5px;
-  line-height: 80px;
-}
-
-nav li a {
-  color: #FFF;
-  font-size: 18px;
-  text-transform: uppercase;
-  padding: 0;
-  border-radius: 2px;
-  text-decoration: none;
-}
-
-nav li a.active, nav li a:hover {
-  border-bottom: 5px solid #FFF;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
 }
 
 label.logo {
@@ -57,6 +32,45 @@ label.logo {
   line-height: 80px;
 }
 
+nav {
+  position: fixed;
+  z-index: 100;
+  height: 8rem;
+  width: 100%;
+  background: #7cb9ae;
+  opacity: 0.8;
+  padding: 0;
+}
+
+nav ul {
+  float: right;
+  margin: auto;
+  margin-right: 50px;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 5px;
+  line-height: 90px;
+}
+
+nav li a {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  color: #FFF;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+nav li a.active, nav li a:hover {
+  border-bottom: 4px solid #FFF;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
 hr {
   margin-left: auto;
   margin-right: auto;
@@ -65,33 +79,77 @@ hr {
   height: 0;
 }
 
-section.page {
-  min-height: 100vh;
+.page {
+  display: block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4em;
+  padding-top: 7em;
+  min-height: calc(100vh - 14em);
+  scroll-snap-align: start;
+}
+
+.page#About {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about-me {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .about-me h1 {
-  font-size: 50px;
-  text-align: left;
-  padding-top: 35vh;
-  width: 60%;
-  margin: auto;
+  margin: 0;
+  padding: 0;
+  font-size: 8rem;
 }
 
 .about-me p {
-  font-size: 15px;
-  font-family: "Georgia";
-  text-align: left;
+  font-size: 2rem;
+}
+
+.about-me img {
+  padding: 0.5rem;
+  margin: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  width: 30rem;
+  height: 30rem;
+}
+
+.container {
   margin: auto;
-  padding-top: 10%;
-  padding-bottom: 10vh;
-  width: 60%;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  width: 80%;
+  max-width: 800px;
+}
+
+.page-title {
+  text-align: center;
 }
 
 .page-title h1 {
   width: 80%;
   padding: 10px;
   font-size: 50px;
-  text-align: right;
   margin-bottom: 1.5rem;
   margin: auto;
 }
@@ -100,7 +158,6 @@ section.page {
   width: 80%;
   font-size: 15px;
   font-family: "Georgia";
-  text-align: right;
   margin: auto;
   margin-bottom: 3rem;
 }
@@ -110,10 +167,6 @@ section.page {
 ==================================*/
 /*-- GENERAL STYLES
     ------------------------------*/
-p.timeline-text {
-  max-width: 550px;
-}
-
 .timeline {
   line-height: 1.4em;
   list-style: none;
@@ -246,8 +299,8 @@ p.timeline-text {
 }
 
 /*----------------------------------------------
-        MOD: TIMELINE SPLIT
-    ----------------------------------------------*/
+MOD: TIMELINE SPLIT
+----------------------------------------------*/
 @media (min-width: 768px) {
   .timeline-split .timeline, .timeline-centered .timeline {
     display: table;
@@ -286,8 +339,8 @@ p.timeline-text {
 }
 
 /*----------------------------------------------
-        MOD: TIMELINE CENTERED
-    ----------------------------------------------*/
+MOD: TIMELINE CENTERED
+----------------------------------------------*/
 @media (min-width: 992px) {
   .timeline-centered,
   .timeline-centered .timeline-item,
@@ -309,7 +362,7 @@ p.timeline-text {
   }
   .timeline-centered .timeline-info,
   .timeline-centered .timeline-content {
-    width: 48%;
+    width: 45%;
   }
   .timeline-centered > .timeline-item:nth-child(odd) .timeline-info {
     float: left;
@@ -320,10 +373,6 @@ p.timeline-text {
     float: right;
     text-align: left;
     padding-left: 30px;
-  }
-  .timeline-centered .timeline-item:nth-child(odd) p.timeline-text {
-    float: right;
-    text-align: left;
   }
   .timeline-centered > .timeline-item:nth-child(even) .timeline-info {
     float: right;
@@ -355,8 +404,8 @@ p.timeline-text {
 }
 
 /*----------------------------------------------
-        MOD: MARKER OUTLINE
-    ----------------------------------------------*/
+MOD: MARKER OUTLINE
+----------------------------------------------*/
 .marker-outline .timeline-marker:before {
   background: transparent;
   border-color: #7cb9ae;
@@ -364,18 +413,6 @@ p.timeline-text {
 
 .marker-outline .timeline-item:hover .timeline-marker:before {
   background: #7cb9ae;
-}
-
-h1.achivements {
-  font-size: 50px;
-  text-align: center;
-  margin-bottom: 0;
-}
-
-p.achivements {
-  text-align: center;
-  margin: auto;
-  width: 60%;
 }
 
 section .card-list {
@@ -411,8 +448,8 @@ section .card-list {
 
 .card-list .card {
   position: relative;
-  width: 20em;
-  height: 210px;
+  width: 40rem;
+  height: 30rem;
   margin: 115px 10px;
   padding: 0.5em;
   display: -webkit-box;
@@ -430,21 +467,26 @@ section .card-list {
 }
 
 .card-list :hover.card {
-  height: 420px;
+  height: 50rem;
   margin: 10px 10px;
 }
 
 .card-list .card .imgBx {
   position: relative;
-  max-width: 260px;
-  max-height: 260px;
-  top: -40px;
-  left: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 80%;
+  max-height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  top: -7rem;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .card-list .card .imgBx img {
   max-width: 100%;
-  border-radius: 8px;
 }
 
 .card-list .card .content {
@@ -468,6 +510,28 @@ section .card-list {
 }
 
 .card-list h2 {
+  font-size: 4rem;
+  color: #FFF;
+}
+
+.card-list p {
+  font-size: 2rem;
+  color: #FFF;
+}
+
+footer {
+  z-index: 0;
+  height: 8rem;
+  background: #7cb9ae;
+  opacity: 0.8;
+  padding: 1rem;
+}
+
+footer h1 {
+  color: #FFF;
+}
+
+footer p {
   color: #FFF;
 }
 /*# sourceMappingURL=styles.css.map */
