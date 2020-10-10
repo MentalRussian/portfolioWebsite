@@ -1,4 +1,5 @@
 body {
+  width: 100vw;
   color: #768390;
   background: #FFF;
   font-family: "Effra", Helvetica, sans-serif;
@@ -7,8 +8,6 @@ body {
   text-decoration: none;
   list-style: none;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  height: 100%;
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
   overflow-y: scroll;
@@ -22,24 +21,31 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
   margin-top: 0;
 }
 
-label.logo {
-  color: #FFF;
-  font-family: sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  padding: 20px;
-  padding-left: 5%;
-  line-height: 80px;
-}
-
 nav {
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
   z-index: 100;
-  height: 8rem;
+  height: 7rem;
   width: 100%;
   background: #7cb9ae;
   opacity: 0.8;
   padding: 0;
+  color: #FFF;
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+nav img {
+  padding-left: 1rem;
+  width: 7rem;
+  height: 7rem;
 }
 
 nav ul {
@@ -55,14 +61,13 @@ nav li {
 }
 
 nav li a {
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
   color: #FFF;
-  font-size: 18px;
   text-transform: uppercase;
   border-radius: 3px;
   text-decoration: none;
   border-bottom: 4px solid transparent;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 nav li a.active, nav li a:hover {
@@ -71,57 +76,65 @@ nav li a.active, nav li a:hover {
   transition: 0.3s ease-in-out;
 }
 
-hr {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  border: 1px solid #7cb9ae;
-  height: 0;
-}
-
 .page {
+  width: 100%;
   display: block;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 4em;
-  padding-top: 7em;
-  min-height: calc(100vh - 14em);
+  padding: 4rem;
+  padding-top: 8rem;
+  min-height: calc(100vh - 14rem);
   scroll-snap-align: start;
 }
 
-.page#About {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.about-me {
+  padding-top: 1rem;
 }
 
-.about-me {
+.about-me .design {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.about-me .engineer {
+  text-align: center;
+}
+
+.about-me .engineer p {
+  max-width: 40rem;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-me div {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 40rem;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: auto;
 }
 
 .about-me h1 {
   margin: 0;
   padding: 0;
-  font-size: 8rem;
+  font-size: 5rem;
 }
 
 .about-me p {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .about-me img {
@@ -129,9 +142,8 @@ hr {
   margin: 0;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50%;
-  width: 30rem;
-  height: 30rem;
+  max-width: 30rem;
+  max-height: 35rem;
 }
 
 .container {
@@ -149,17 +161,16 @@ hr {
 .page-title h1 {
   width: 80%;
   padding: 10px;
-  font-size: 50px;
-  margin-bottom: 1.5rem;
+  font-size: 6rem;
   margin: auto;
 }
 
 .page-title p {
   width: 80%;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-family: "Georgia";
   margin: auto;
-  margin-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 
 /*==================================
@@ -168,11 +179,10 @@ hr {
 /*-- GENERAL STYLES
     ------------------------------*/
 .timeline {
-  line-height: 1.4em;
+  line-height: 1.4rem;
   list-style: none;
-  margin: 0;
+  margin: auto;
   padding: 0;
-  width: 100%;
 }
 
 .timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {
@@ -194,7 +204,7 @@ hr {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 3px;
-  margin: 0 0 .5em 0;
+  margin: 0 0 .5rem 0;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -416,9 +426,9 @@ MOD: MARKER OUTLINE
 }
 
 section .card-list {
-  width: calc(100% - 2em);
-  margin-left: 1em;
-  margin-right: 1em;
+  width: calc(100% - 2rem);
+  margin-left: 1rem;
+  margin-right: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,7 +461,7 @@ section .card-list {
   width: 40rem;
   height: 30rem;
   margin: 115px 10px;
-  padding: 0.5em;
+  padding: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -520,6 +530,7 @@ section .card-list {
 }
 
 footer {
+  width: 100%;
   z-index: 0;
   height: 8rem;
   background: #7cb9ae;
